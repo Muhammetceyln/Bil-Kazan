@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BilKazan"
+        tools:targetApi="31">
+
+        <!-- 1. Splash Ekranı (Uygulamanın Giriş Kapısı) -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+<!--        <activity android:name=".GameActivity"-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.actionMAIN" />-->
+<!--                <category android:name="android.intent.category.DEFAULT"/>-->
+<!--            </intent-filter>-->
+
+
+
+        <activity
+            android:name=".GameActivity"
+            android:exported="false" />
+
+        <!-- 2. Giriş Ekranı -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+
+
+
+        <activity
+            android:name=".ResultActivity"
+            android:exported="false" />
+
+        <!-- 4. Ana Panel (Dashboard) -->
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+
+        <!-- 5. Liderlik Tablosu -->
+        <activity
+            android:name=".LeaderboardActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

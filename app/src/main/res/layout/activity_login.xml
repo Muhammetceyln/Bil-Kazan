@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"> <!-- Uzay/İkonlu arka plan görseli -->
+
+    <!-- Her şeyi tam ortada ve bir arada tutacak Ana Kapsayıcı -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvFooterText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Üst Logo (logo.png) -->
+
+
+        <!-- Yarı Şeffaf Ana Kart (Glassmorphism) -->
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/logo" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            app:cardBackgroundColor="#4D00103A"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#4DFFFFFF"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hemen Başla!"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- Kullanıcı Adı Alanı -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kullanıcı Adı veya E-posta"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="6dp"/>
+
+                <EditText
+                    android:id="@+id/etLoginUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_rounded_white"
+                    android:hint="örn: ahmet_bilen"
+                    android:textColorHint="#888888"
+                    android:textColor="#333333"
+                    android:paddingHorizontal="16dp"
+                    android:drawableStart="@drawable/ic_user"
+                    android:drawablePadding="12dp"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Şifre Alanı -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Şifre"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="6dp"/>
+
+                <EditText
+                    android:id="@+id/etLoginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_rounded_white"
+                    android:hint="Şifre"
+                    android:textColorHint="#888888"
+                    android:textColor="#333333"
+                    android:paddingHorizontal="16dp"
+                    android:drawableStart="@drawable/lock"
+                    android:drawablePadding="12dp"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Şifremi Unuttum (Sağa Yaslı) -->
+
+
+                <!-- GİRİŞ YAP Butonu -->
+                <!-- app:backgroundTint="@null" kodu çok önemli, yoksa butonun rengi bozulur -->
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_gradient_orange"
+                    app:backgroundTint="@null"
+                    android:text="GİRİŞ YAP"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Beni Hatırla (Sola Yaslı) -->
+                <CheckBox
+                    android:id="@+id/cbRememberMe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Beni Hatırla"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:buttonTint="#4CA1AF"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- Alternatif Giriş Çizgisi -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:background="#4DFFFFFF"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Alternatif Giriş Yöntemleri" android:textColor="#B3FFFFFF" android:textSize="12sp" android:paddingHorizontal="12dp"/>
+                    <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:background="#4DFFFFFF"/>
+                </LinearLayout>
+
+                <!-- Sosyal Medya İkonları (Yuvarlak Arka Planlı) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/apple" android:background="@drawable/bg_circle_white" android:padding="8dp" android:layout_marginEnd="16dp"/>
+                    <ImageView android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/google" android:background="@drawable/bg_circle_white" android:padding="8dp" android:layout_marginEnd="16dp"/>
+                    <ImageView android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/mail" android:background="@drawable/bg_circle_white" android:padding="8dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Kayıt Ol Linki -->
+        <LinearLayout
+            android:id="@+id/llSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hesabınız Yok Mu? "
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/tvGoToRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kaydolun"
+                android:textStyle="bold"
+                android:textColor="#4CA1AF" />
+        </LinearLayout>
+
+    </LinearLayout> <!-- Ana Kapsayıcı Sonu -->
+
+    <!-- En Alt Footer (Ekranda hep en altta kalır) -->
+    <TextView
+        android:id="@+id/tvFooterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="© 2026 BilKazan. Tüm hakları saklıdır."
+        android:textColor="#80FFFFFF"
+        android:textSize="12sp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
